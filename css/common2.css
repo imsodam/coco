@@ -1,0 +1,127 @@
+@charset "utf-8";
+
+/* flex 사용 */
+.row {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+#header .top_menu {
+    background: #f3f3f3;
+    color: #999;
+    font-size: 12px;
+}
+
+#header .top_menu .row {
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#header .top_menu a {
+    padding: 7px 20px;
+    display: inline-block; 
+    border-right: 1px solid #e3e3e3;
+}
+
+#header .top_menu a:nth-of-type(1) {
+    border-left: 1px solid #e3e3e3;
+}
+
+#header .top_menu a:hover {
+    color: #dbb075;
+}
+
+/* search - js 사용해서 안보이게해야함 */
+#header .search {
+    position: absolute;
+    right: 320px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#header .search #sbox {
+    width: 169px;
+    border: none;
+    outline: none;
+    text-indent: 1em;
+}
+
+#header .search label {
+    cursor: pointer;
+}
+
+/* logo, navigation */
+#header > .row {
+    display: flex;
+    position: relative;
+    z-index: 9;
+}
+
+#header h1 {
+    width: 20%;
+    padding: 25px 0;
+}
+
+#header #nav {
+    width: 80%;
+    font-size: 18px;
+    color: #1e1e1e;
+    position: absolute;
+    top: 50%;
+    right: -300px;
+    transform: translateY(-50%);
+}
+
+#header #nav .depth1 {
+    display: flex;
+}
+
+#header #nav .depth1 > li {
+    position: relative;
+}
+
+#header #nav .depth1 > li > a {
+    display: block;
+    padding: 20px 40px;
+}
+
+#header #nav .depth1 > li:hover > a {
+    color: #00529b;
+}
+
+#header .depth2 { /* 부모에 position:relative */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    /* z-index: 9; */
+    color: #f3f3f3;
+    background: #555;
+    text-align: center;
+    font-size: 14px;
+    display: none;
+}
+
+#header #nav .depth1 > li:hover .depth2 {
+    display: block;
+}
+
+#header .depth2 a { /* depth3 없으면 부등호 안써도 됨 */
+    display: block;
+    padding: 18px 0;
+    border-bottom: 1px solid #999;
+    transition: all .5s;
+}
+
+#header .depth2 li:last-child a {
+    border-bottom: none;
+}
+
+#header .depth2 li:hover a {
+    background: #00529b;
+    color: #dfe9fe;
+}
+
+
